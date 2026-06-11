@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-text-primary font-sans antialiased;
+    cursor: none;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+  ::selection {
+    background: rgba(181, 104, 60, 0.2);
+    color: #111;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAFAF8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #B5683C;
+  }
+}
+
+@layer utilities {
+  .gold-line {
+    @apply block w-16 h-px bg-gold;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom cursor */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #B5683C;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(181, 104, 60, 0.6);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease;
+}
+.cursor-ring.hovering {
+  width: 56px;
+  height: 56px;
+  border-color: rgba(181, 104, 60, 1);
+}
+
+/* Magnetic btn */
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Loading screen */
+.loader-bar {
+  height: 1px;
+  background: #B5683C;
+  transform-origin: left;
+}
+
+/* Scroll progress */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #B5683C, #D29A66);
+  z-index: 1000;
+  transform-origin: left;
+}
